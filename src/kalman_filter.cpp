@@ -56,6 +56,9 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   /**
    * TODO: update the state by using Extended Kalman Filter equations
    */
+   if( x_[0] < 0.001 && x_[1] < 0.001 )
+    return;
+
    VectorXd z_pred;
    z_pred<<(sqrt(x_[0]*x_[0]+x_[1]*x_[1])),
               (atan2(x_[1],x_[0])),
