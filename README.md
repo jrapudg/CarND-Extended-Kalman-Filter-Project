@@ -1,6 +1,13 @@
 # Extended Kalman Filter Project 
 Self-Driving Car Engineer Nanodegree Program
 
+
+[//]: # (Image References)
+[image1]: ./images/terminal connection.png "Connection"
+[image2]: ./images/terminal_output.png "terminal"
+[image3]: ./images/sim_example.png "simulation"
+
+
 ## Description
 
 This project implements a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements with c++. 
@@ -71,7 +78,9 @@ If you'd like to generate your own radar and lidar data, see the
 Matlab scripts that can generate additional data.
 
 ## Output
-
+![alt text][image1]
+![alt text][image2]
+![alt text][image3]
 
 
 
