@@ -8,7 +8,7 @@ mkdir build
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 cd build
 OPENSSL_VERSION=`openssl version -v | cut -d' ' -f2`
-cmake DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl/1.0.2q/ -DOPENSSL_CRYPTO_LIBRARY=/usr/local/Cellar/openssl/1.0.2q/lib/
+cmake -DOPENSSL_ROOT_DIR=/usr/local/Cellar/openssl/1.0.2q/ -DOPENSSL_LIBRARIES=/usr/local/Cellar/openssl/1.0.2q/lib/
 make
 sudo make install
 cd ..
