@@ -3,7 +3,7 @@ Self-Driving Car Engineer Nanodegree Program
 
 
 [//]: # (Image References)
-[image1]: ./images/terminal connection.png "Connection"
+[image1]: ./images/terminal_connection.png "Connection"
 [image2]: ./images/terminal_output.png "terminal"
 [image3]: ./images/sim_example.png "simulation"
 
