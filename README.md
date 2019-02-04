@@ -89,5 +89,12 @@ And on the simulator like:
 
 ![alt text][image3]
 
+## Accuracy
 
+### For the prokect review px, py, vx, vy output coordinates must have an RMSE <= [.11, .11, 0.52, 0.52] for Dataset 1"
+
+My algorithm accuracy is:
+
+* Dataset 1 : RMSE <= [0.0973, 0.0855, 0.4513, 0.4399]
+* Dataset 2 : RMSE <= [0.0726, 0.0965, 0.4216, 0.4932]
 
