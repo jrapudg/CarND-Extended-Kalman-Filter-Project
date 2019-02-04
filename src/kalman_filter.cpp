@@ -1,5 +1,4 @@
 #include "kalman_filter.h"
-#define pi 3.14159265358979323846
 
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
@@ -55,9 +54,9 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   /**
    * TODO: update the state by using Extended Kalman Filter equations
    */
-   if ((abs(x_[0]) < 0.000001 )&&( abs(x_[1]) < 0.000001)) {
-      x_[0] = 0.000001;
-      x_[1] = 0.000001;
+   if ((abs(x_[0]) < 0.0000001 )&&( abs(x_[1]) < 0.0000001)) {
+      x_[0] = 0.0000001;
+      x_[1] = 0.0000001;
    }
 
    VectorXd z_pred = VectorXd(3);
@@ -70,16 +69,16 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
    double theta = atan2(py, px);
    double rho_dot = (px*vx + py*vy) / rho;
    z_pred << rho, theta, rho_dot;
-
-   if (z_pred[1]>pi){
-     z_pred[1] -= 2*pi;
-   }
-   else{
-       if(z_pred[1]<-pi){
-     z_pred[1] += 2*pi;
-       }
-   }
    VectorXd y = z - z_pred;
+
+   while (y(1) > M_PI || y(1) < -M_PI ) {
+    if ( y(1) > M_PI ) {
+      y(1) -= 2*M_PI;
+    } else {
+      y(1) += 2*M_PI;
+    }
+  }
+
    MatrixXd Ht = H_.transpose();
    MatrixXd S = H_ * P_ * Ht + R_;
    MatrixXd Si = S.inverse();
