@@ -78,8 +78,15 @@ If you'd like to generate your own radar and lidar data, see the
 Matlab scripts that can generate additional data.
 
 ## Output
+Once the project has been build, execute `./ExtendedKF`. The terminal should look like:
+
 ![alt text][image1]
+
+It means that there is already a connection with the simulator. Then push the button start on the simulator and you should have an output on the terminal like: 
 ![alt text][image2]
+
+And on the simulator like: 
+
 ![alt text][image3]
 
 
